@@ -16,13 +16,18 @@
 <body>
 
     <div class="container">
-        <h1>prova</h1>
+        <h1 id="main-title">Movies</h1>
 
-        @foreach ($movies as $movie)
-        <div class="card">
-            {{$movie->title}} - {{$movie->original_title}}
-        </div>  
-    @endforeach
+        <div id="card-container">
+            @foreach ($movies as $movie)
+            <div class="card single-card">
+                <div>Titolo: <strong>{{$movie->title}}</strong> <small>({{$movie->original_title}})</small></div>
+                <div>Data di uscita: {{$movie->date}}</div>
+                <div>Nazionalità: {{$movie->nationality}}</div>
+                <div>Voto medio: {{$movie->vote}}</div>
+            </div>  
+            @endforeach
+        </div>
 
     </div>
 
